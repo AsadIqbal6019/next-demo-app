@@ -36,7 +36,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t asadiqbal6019/next-demo-app:$BUILD_NUMBER:0 .'
+                sh 'docker build -t asadiqbal6019/next-demo-app:$BUILD_NUMBER.0 .'
             }
         }
         stage('login to dockerhub') {
@@ -46,7 +46,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push asadiqbal6019/next-demo-app:$BUILD_NUMBER:0'
+                sh 'docker push asadiqbal6019/next-demo-app:$BUILD_NUMBER.0'
             }
         }
 
